@@ -2,18 +2,38 @@
   "name": "flask-react-mongodb",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -p --progress --config webpack.config.js",
+    "dev-build": "webpack --progress -d --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --progress -d --config webpack.config.js --watch"
   },
   "author": "Chris Pelletier",
   "license": "MIT",
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "bootstrap": "4.0.0-alpha.6",
+    "css-loader": "^0.28.7",
+    "history": "^4.7.2",
+    "node-sass": "^4.5.3",
+    "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-addons-transition-group": "^15.6.0",
+    "react-addons-update": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "reactstrap": "^4.8.0",
+    "redux": "^3.7.2",
+    "redux-devtools": "^3.4.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "universal-cookie": "^2.1.0",
     "webpack": "^3.6.0",
+    "whatwg-fetch": "^2.0.3",
     "yarn": "^1.0.2"
   },
-  "devDependencies": {
-    "babel-loader": "^7.1.2",
-    "css-loader": "^0.28.7",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.18.2"
-  }
+  "devDependencies": {}
 }
