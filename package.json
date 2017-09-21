@@ -1,0 +1,12 @@
+{
+  "name": "flask-react-mongodb",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Pelletier",
+  "license": "MIT",
+  "dependencies": {
+    "yarn": "^1.0.2"
+  }
+}
