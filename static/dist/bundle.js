@@ -1447,7 +1447,7 @@ eval("/* harmony default export */ __webpack_exports__[\"a\"] = ({\n    email: n
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function(process) {/* harmony default export */ __webpack_exports__[\"a\"] = ({\n    API_URL: process.env.API_URL ? process.env.API_URL : 'http://localhost:3001/api'\n});\n/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(/*! ./../../node_modules/process/browser.js */ 0)))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTE1LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL3N0YXRpYy9qcy9jb25zdGFudHMuanM/M2JhMyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCB7XG4gICAgQVBJX1VSTDogcHJvY2Vzcy5lbnYuQVBJX1VSTCA/IHByb2Nlc3MuZW52LkFQSV9VUkwgOidodHRwOi8vbG9jYWxob3N0OjMwMDEvYXBpJyBcbn1cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gc3RhdGljL2pzL2NvbnN0YW50cy5qcyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQURBO0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///115\n");
+eval("/* harmony default export */ __webpack_exports__[\"a\"] = ({\n    API_URL: window.location.origin + '/api'\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTE1LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL3N0YXRpYy9qcy9jb25zdGFudHMuanM/M2JhMyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCB7XG4gICAgQVBJX1VSTDogd2luZG93LmxvY2F0aW9uLm9yaWdpbiArICcvYXBpJyBcbn1cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gc3RhdGljL2pzL2NvbnN0YW50cy5qcyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQURBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///115\n");
 
 /***/ }),
 /* 116 */
