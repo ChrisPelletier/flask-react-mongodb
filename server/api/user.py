@@ -45,6 +45,7 @@ def login():
         payload = request.get_json()
         user_object = users_collection.find_one({"email":payload['email']})
         if user_object and verify_password(user_object['password_hash'], payload['password']):
+            users_collection.update_one({'_id':user_object['_id']}, {"$set": {"last_login": datetime.utcnow()}})
             return jsonify({'jwt': encode_auth_token(user_object['_id'])})
         else:
             resp = jsonify({"code":"user_not_found","description": "That user email and password do not match our records."})
