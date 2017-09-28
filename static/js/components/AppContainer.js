@@ -49,7 +49,6 @@ class AppContainer extends Component {
         let routes = items.map((item, index) => {
             return <Route exact={item.exact} path={item.path} key={index} component={item.component}></Route>
         });
-        console.log(this.props.register);
         return (
             <Router history={history}>
                 <div>

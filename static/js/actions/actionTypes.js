@@ -12,7 +12,6 @@ export default {
     UPDATE_LOGIN_PASSWORD: 'update login password',
     LOGIN_EMAIL_ERROR: 'login email error',
     LOGIN_PASSWORD_ERROR: 'login password error',
-    LOGOUT_USER: 'logout user',
 
     // Register actions
     FETCH_REGISTER: 'fetch register',
