@@ -12,8 +12,7 @@ class Header extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-          isOpen: false,
-          authenticated: this.props.authenticated
+          isOpen: false
         };
     }
 
@@ -27,12 +26,6 @@ class Header extends Component {
         cookies.remove('jwt');
         this.props.onLogout();
         event.preventDefault();
-    }
-
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.authenticated !== this.state.authenticated) {
-            this.setState({authenticated: nextProps.authenticated});
-        }
     }
 
     render() {
@@ -51,7 +44,7 @@ class Header extends Component {
                         <Nav className="ml-auto" navbar>
                             {navLinks}
                             {
-                                this.state.authenticated ?
+                                this.props.authenticated ?
                                     <li><a href="" className="nav-link" onClick={this.handleLogout.bind(this)}>Logout</a></li> :
                                     <li><Link to="/login" className="nav-link">Login</Link></li>
                             }
