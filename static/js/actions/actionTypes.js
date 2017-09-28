@@ -14,6 +14,14 @@ export default {
     LOGIN_PASSWORD_ERROR: 'login password error',
     LOGOUT_USER: 'logout user',
 
+    // Register actions
+    FETCH_REGISTER: 'fetch register',
+    FETCH_REGISTER_SUCCESS: 'fetch register success',
+    FETCH_REGISTER_FAILURE: 'fetch register failure',
+    UPDATE_REGISTER_EMAIL: 'update register email',
+    UPDATE_REGISTER_PASSWORD: 'update register password',
+    UPDATE_REGISTER_RETYPE_PASSWORD: 'update register retype password',
+
     FETCH_USER: 'fetch user',
     FETCH_USER_SUCCESS: 'fetch user success',
     FETCH_USER_FAILURE: 'fetch user failure'

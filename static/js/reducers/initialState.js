@@ -10,5 +10,15 @@ export default {
         loginError: '',
         emailError: '',
         passwordError: ''
+    },
+    register: {
+        email: '',
+        emailError: '',
+        password: '',
+        passwordError: '',
+        retypePassword: '',
+        retypePasswordError: '',
+        matchingPasswordError: '',
+        registerError: ''
     }
 };
