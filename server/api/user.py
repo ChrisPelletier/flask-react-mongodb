@@ -3,7 +3,7 @@ from . import api_bp
 from server import db
 from datetime import datetime
 from ..utils.password import encrypt_password, verify_password
-from ..utils.authenticate import encode_auth_token, validate_json
+from ..utils.authenticate import encode_auth_token, validate_json, authenticate
 
 users_collection = db.users
 counter_collection = db.counters
@@ -15,9 +15,9 @@ def get_next_sequence(name):
         return_document=True)
     return ret['seq']
 
-@api_bp.route('/user', methods=['GET','POST'])
+@api_bp.route('/user', methods=['POST'])
 @validate_json
-def user():
+def post_user():
     if request.method == 'POST':
         payload = request.get_json()
         existing_user = users_collection.find_one({"email":payload['email']})
@@ -37,6 +37,13 @@ def user():
             resp = jsonify({"_id": new_user['_id'], 'email': new_user['email']})
             resp.status_code = 201
             return resp
+
+@api_bp.route('/user', methods=['GET'])
+@authenticate
+def get_user(user):
+    if request.method == 'GET':
+        print(user)
+        return jsonify({k:v for k, v in user.items() if k not in ["password_hash"]})
 
 @api_bp.route('/user/login', methods=['POST'])
 @validate_json
