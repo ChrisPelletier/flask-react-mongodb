@@ -11,15 +11,8 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.register_blueprint(api_blueprint, url_prefix='/api')
 
 @app.route("/")
+@app.route("/about")
 def index():
-    return render_template("index.html")
-
-@app.route('/dist/<path:path>')
-def send_js(path):
-    return send_from_directory('dist', path)
-
-@app.errorhandler(404)
-def page_not_found(e):
     return render_template("index.html")
 
 if __name__ == "__main__":
