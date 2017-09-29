@@ -20,5 +20,8 @@ export default {
         retypePasswordError: '',
         matchingPasswordError: '',
         registerError: ''
+    },
+    header: {
+        menuIsOpen: false
     }
 };

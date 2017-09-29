@@ -21,6 +21,9 @@ export default {
     UPDATE_REGISTER_PASSWORD: 'update register password',
     UPDATE_REGISTER_RETYPE_PASSWORD: 'update register retype password',
 
+    // Header actions
+    TOGGLE_MENU: 'toggle menu',
+
     FETCH_USER: 'fetch user',
     FETCH_USER_SUCCESS: 'fetch user success',
     FETCH_USER_FAILURE: 'fetch user failure'

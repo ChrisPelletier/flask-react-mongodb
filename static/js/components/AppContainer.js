@@ -13,6 +13,7 @@ import * as userActions from '../actions/userActions';
 import * as jwtActions from '../actions/jwtActions';
 import * as loginActions from '../actions/loginActions';
 import * as registerActions from '../actions/registerActions';
+import * as headerActions from '../actions/headerActions';
 
 const history = createBrowserHistory();
 
@@ -52,7 +53,10 @@ class AppContainer extends Component {
         return (
             <Router history={history}>
                 <div>
-                    <Header authenticated={this.props.jwt} onLogout={this.handleLogout.bind(this)} />
+                    <Header authenticated={this.props.jwt} 
+                            onLogout={this.handleLogout.bind(this)}
+                            onToggleMenu={this.props.headerActions.toggleMenu.bind(this)} 
+                            menuIsOpen={this.props.header.menuIsOpen}/>
                     <Container>
                         <Switch>
                             {routes}
@@ -97,7 +101,8 @@ const mapStateToProps = (state) => {
     return {
         jwt: state.jwt,
         login: {...state.login},
-        register: {...state.register}
+        register: {...state.register},
+        header: {...state.header}
     };
 }
 
@@ -106,7 +111,8 @@ const mapDispatchToProps = (dispatch) => {
         userActions: bindActionCreators(userActions, dispatch),
         jwtActions: bindActionCreators(jwtActions, dispatch),
         loginActions: bindActionCreators(loginActions, dispatch),
-        registerActions: bindActionCreators(registerActions, dispatch)
+        registerActions: bindActionCreators(registerActions, dispatch),
+        headerActions: bindActionCreators(headerActions, dispatch)
     };
 }
 

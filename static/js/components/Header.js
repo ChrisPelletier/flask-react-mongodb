@@ -7,21 +7,6 @@ import items from '../utilities/NavigationItems';
 const cookies = new Cookies();
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-          isOpen: false
-        };
-    }
-
-    toggle() {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
-
     handleLogout(event) {
         cookies.remove('jwt');
         this.props.onLogout();
@@ -30,7 +15,7 @@ class Header extends Component {
 
     render() {
         let navLinks = items.map((item, index) => {
-            if (!item.requiresAuthentication || (item.requiresAuthentication && this.state.authenticated)) {
+            if (!item.requiresAuthentication || (item.requiresAuthentication && this.props.authenticated)) {
                 return <li key={index}><Link to={item.path} className="nav-link">{item.label}</Link></li>
             }
         });
@@ -38,9 +23,9 @@ class Header extends Component {
         return (
             <div>
                 <Navbar className="navbar-inverse bg-primary" toggleable>
-                    <NavbarToggler right onClick={this.toggle} />
+                    <NavbarToggler right onClick={this.props.onToggleMenu} />
                     <NavbarBrand href="/">Chris Pelletier</NavbarBrand>
-                    <Collapse isOpen={this.state.isOpen} navbar>
+                    <Collapse isOpen={this.props.menuIsOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             {navLinks}
                             {
