@@ -13,16 +13,10 @@ export default function login(state = initialState.login, action) {
             return {...state, loginError: action.error};
             break;
         case actionTypes.UPDATE_LOGIN_EMAIL:
-            return {...state, email: action.email};
+            return {...state, email: action.email, emailError: action.error};
             break;
         case actionTypes.UPDATE_LOGIN_PASSWORD:
-            return {...state, password: action.password};
-            break;
-        case actionTypes.LOGIN_EMAIL_ERROR:
-            return {...state, emailError: action.error};
-            break;
-        case actionTypes.LOGIN_PASSWORD_ERROR:
-            return {...state, passwordError: action.error};
+            return {...state, password: action.password, passwordError: action.error};
             break;
         default:
             return state;

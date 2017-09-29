@@ -10,8 +10,6 @@ export default {
     FETCH_LOGIN_ERROR: 'fetch login error',
     UPDATE_LOGIN_EMAIL: 'update login email',
     UPDATE_LOGIN_PASSWORD: 'update login password',
-    LOGIN_EMAIL_ERROR: 'login email error',
-    LOGIN_PASSWORD_ERROR: 'login password error',
 
     // Register actions
     FETCH_REGISTER: 'fetch register',

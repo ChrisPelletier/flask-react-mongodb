@@ -54,12 +54,9 @@ export const updateEmail = (email) => {
         '';
     return dispatch => {
         dispatch({
-            type: actionTypes.LOGIN_EMAIL_ERROR,
-            error: emailError
-        });
-        dispatch({
             type: actionTypes.UPDATE_LOGIN_EMAIL,
-            email
+            email,
+            error: emailError
         });
     };
 }
@@ -70,12 +67,9 @@ export const updatePassword = (password) => {
         '';
     return dispatch => {
         dispatch({
-            type: actionTypes.LOGIN_PASSWORD_ERROR,
-            error: passwordError
-        });
-        dispatch({
             type: actionTypes.UPDATE_LOGIN_PASSWORD,
-            password
+            password,
+            error: passwordError
         });
     }
 }
