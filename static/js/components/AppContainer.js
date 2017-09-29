@@ -65,11 +65,7 @@ class AppContainer extends Component {
                                    render={routeProps => <LoginPage onLogin={this.handleLogin.bind(this)}
                                    onEmailUpdate={this.props.loginActions.updateEmail.bind(this)}
                                    onPasswordUpdate={this.props.loginActions.updatePassword.bind(this)}
-                                   email={this.props.login.email}
-                                   password={this.props.login.password}
-                                   loginError={this.props.login.loginError}
-                                   emailError={this.props.login.emailError}
-                                   passwordError={this.props.login.passwordError}
+                                   {...this.props.login}
                                    {...routeProps}/>}>
                             </Route>
                             <Route exact 
@@ -78,14 +74,7 @@ class AppContainer extends Component {
                                    onEmailUpdate={this.props.registerActions.updateEmail.bind(this)}
                                    onPasswordUpdate={this.props.registerActions.updatePassword.bind(this)}
                                    onRetypePasswordUpdate={this.props.registerActions.updateRetypePassword.bind(this)}
-                                   email={this.props.register.email}
-                                   emailError={this.props.register.emailError}
-                                   password={this.props.register.password}
-                                   passwordError={this.props.register.passwordError}
-                                   retypePassword={this.props.register.retypePassword}
-                                   retypePasswordError={this.props.register.retypePasswordError}
-                                   matchingPasswordError={this.props.register.matchingPasswordError}
-                                   registerError={this.props.register.registerError}
+                                   {...this.props.register}
                                    {...routeProps}/>}>
                             </Route>
                             <Redirect to="/"></Redirect>
