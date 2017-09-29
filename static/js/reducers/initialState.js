@@ -1,5 +1,5 @@
 export default {
-    jwt: '',
+    jwt: localStorage.getItem('jwt') || null,
     user: {
         fetchingUser: false,
         fetchUserError: {}

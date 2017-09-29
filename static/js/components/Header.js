@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from 'reactstrap';
-import Cookies from 'universal-cookie';
 import items from '../utilities/NavigationItems';
-
-const cookies = new Cookies();
 
 class Header extends Component {
     handleLogout(event) {
-        cookies.remove('jwt');
         this.props.onLogout();
         event.preventDefault();
     }

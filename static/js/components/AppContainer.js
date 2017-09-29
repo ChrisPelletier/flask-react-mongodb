@@ -48,7 +48,9 @@ class AppContainer extends Component {
 
     render() {
         let routes = items.map((item, index) => {
-            return <Route exact={item.exact} path={item.path} key={index} component={item.component}></Route>
+            if (!item.requiresAuthentication || (!!item.requiresAuthentication && !!this.props.jwt)) {
+                return <Route exact={item.exact} path={item.path} key={index} component={item.component}></Route>
+            }
         });
         return (
             <Router history={history}>
