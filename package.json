@@ -1,6 +1,10 @@
 {
   "name": "flask-react-mongodb",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.1.x",
+    "yarn": "1.1.x"
+  },
   "scripts": {
     "build": "webpack -p --progress --config webpack.config.js",
     "dev-build": "webpack --progress -d --config webpack.config.js",
