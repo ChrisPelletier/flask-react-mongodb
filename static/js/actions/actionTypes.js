@@ -22,7 +22,8 @@ export default {
     // Header actions
     TOGGLE_MENU: 'toggle menu',
 
-    FETCH_USER: 'fetch user',
-    FETCH_USER_SUCCESS: 'fetch user success',
-    FETCH_USER_FAILURE: 'fetch user failure'
+    // User actions
+    GET_USER: 'fetch user',
+    GET_USER_SUCCESS: 'fetch user success',
+    GET_USER_FAILURE: 'fetch user failure'
 };

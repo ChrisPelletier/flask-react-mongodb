@@ -2,11 +2,11 @@ import actionTypes from './actionTypes';
 import constants from '../constants';
 import 'whatwg-fetch';
 
-export const fetchUser = (jwt) => {
+export const getUser = (jwt) => {
     return dispatch => {
         let thereWasAnError = false;
         dispatch({
-            type: actionTypes.FETCH_USER
+            type: actionTypes.GET_USER
         })
         return fetch(constants.API_URL + '/user', {
             method: 'GET',
@@ -28,7 +28,7 @@ export const fetchUser = (jwt) => {
         })
         .then(responseData => {
             dispatch({ 
-                type: actionTypes.FETCH_USER_SUCCESS,
+                type: actionTypes.GET_USER_SUCCESS,
                 user: responseData,
                 fetchigUserError: null
             });
@@ -37,7 +37,7 @@ export const fetchUser = (jwt) => {
         })
         .catch(error => {
             dispatch({
-                type: actionTypes.FETCH_USER_FAILURE,
+                type: actionTypes.GET_USER_FAILURE,
                 fetchigUserError: error.message
             });
             return Promise.reject(error.message);
