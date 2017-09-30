@@ -2,7 +2,8 @@ export default {
     jwt: localStorage.getItem('jwt') || null,
     user: {
         fetchingUser: false,
-        fetchUserError: {}
+        fetchUserError: '',
+        user: JSON.parse(localStorage.getItem('user')) || {}
     },
     login: {
         email: '',

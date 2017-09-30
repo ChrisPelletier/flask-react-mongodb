@@ -41,7 +41,7 @@ export const fetchLogin = (email, password) => {
                 type: actionTypes.FETCH_LOGIN_ERROR,
                 error: error.message
             });
-            return error;
+            return Promise.reject(error.message);
         });
     }
 }

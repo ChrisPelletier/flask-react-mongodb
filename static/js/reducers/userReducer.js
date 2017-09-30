@@ -5,13 +5,11 @@ export default function user(state = initialState.user, action) {
     switch (action.type) {
         case actionTypes.FETCH_USER:
             state = {...state, fetchingUser: true};
-            console.log('FETCH_USER action');
             return state;
             break;
         case actionTypes.FETCH_USER_SUCCESS:
-            state = {...state, user: action.user, fetchingUser: false};
             console.log('FETCH_USER_SUCCESS action');
-            return newState;
+            return {...state, user: action.user, fetchingUser: false};
             break;
         case actionTypes.FETCH_USER_FAILURE:
             state = {...state, fetchingUser: false, fetchUserError: action.error};

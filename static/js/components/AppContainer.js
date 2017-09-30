@@ -31,7 +31,10 @@ class AppContainer extends Component {
         this.props.loginActions.fetchLogin(this.props.login.email, this.props.login.password)
         .then(response => {
             this.props.jwtActions.setJwt(response.jwt);
-            history.push('/about');
+            this.props.userActions.fetchUser(response.jwt)
+            .then(userResponse => {
+                history.push('/about');
+            })
         }); 
     }
 
@@ -93,7 +96,8 @@ const mapStateToProps = (state) => {
         jwt: state.jwt,
         login: {...state.login},
         register: {...state.register},
-        header: {...state.header}
+        header: {...state.header},
+        user: {...state.user}
     };
 }
 

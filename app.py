@@ -12,6 +12,8 @@ app.register_blueprint(api_blueprint, url_prefix='/api')
 
 @app.route("/")
 @app.route("/about")
+@app.route("/login")
+@app.route("/register")
 def index():
     return render_template("index.html")
 
