@@ -19,7 +19,12 @@ const history = createBrowserHistory();
 
 class AppContainer extends Component {
     componentWillMount() {
-        this.props.jwtActions.getJwt();
+        if(!this.props.jwt){
+            this.props.jwtActions.getJwt();
+        }
+        if(!Object.keys(this.props.user.user).length && !!this.props.jwt) {
+            this.props.userActions.getUser(this.props.jwt);
+        }
     }
 
     handleLogout() {
@@ -44,7 +49,10 @@ class AppContainer extends Component {
             this.props.loginActions.fetchLogin(response.email, this.props.register.retypePassword)
             .then(loginResponse => {
                 this.props.jwtActions.setJwt(loginResponse.jwt);
-                history.push('/about');
+                this.props.userActions.getUser(response.jwt)
+                .then(userResponse => {
+                    history.push('/about');
+                })
             })
         });
     }
