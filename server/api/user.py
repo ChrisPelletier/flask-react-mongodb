@@ -42,8 +42,14 @@ def post_user():
 @authenticate
 def get_user(user):
     if request.method == 'GET':
-        print(user)
-        return jsonify({k:v for k, v in user.items() if k not in ["password_hash"]})
+        if user:
+            resp = jsonify({k:v for k, v in user.items() if k not in ["password_hash"]})
+            resp.status_code = 200
+            return resp
+        else:
+            resp = jsonify({"code":"user_not_found","description": "A user with that email was not found."})
+            resp.status_code = 404
+            return resp
 
 @api_bp.route('/user/login', methods=['POST'])
 @validate_json
