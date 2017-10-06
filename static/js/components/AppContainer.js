@@ -49,7 +49,7 @@ class AppContainer extends Component {
             this.props.loginActions.fetchLogin(response.email, this.props.register.retypePassword)
             .then(loginResponse => {
                 this.props.jwtActions.setJwt(loginResponse.jwt);
-                this.props.userActions.getUser(response.jwt)
+                this.props.userActions.getUser(loginResponse.jwt)
                 .then(userResponse => {
                     history.push('/about');
                 })
